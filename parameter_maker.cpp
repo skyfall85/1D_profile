@@ -13,7 +13,7 @@ double H_coeff=atoi(argv[1]);
 
 double d0_coeff=atoi(argv[2]);
 /*-----Valtoztathato parameterek-------------------*/
-double T=1720;
+double T=1374;
 double  c_s=0.3977252936799706;
 double  c_l=0.4649878481647202;
 double c0=0;                  // az egy komponensu rendszerben csak az egyik komponens van jelen
@@ -25,19 +25,19 @@ double dt=1.1875e-6/2.0/(8.0*8.0);
 
 
 /*-----------Fizikai parameterek-------------------*/
-double V_m=7.4e-6;
-double dh_f_Ni=2.35e9;		//terfogati olvadasho	
+double V_m=6.59e-6;
+double dh_f_Ni=2.61e9;		//terfogati olvadasho	
 double dh_f_Cu=1.728e9;		//terfogati olvadasho
 double T_m_Ni=1728;
 double T_m_Cu=1358;
 // double d0=4.1577879e-8; 
-double d0=1e-9/(2.0*sqrt(2)*log(9))*d0_coeff; 
+double d0=2.0*1.6090908e-10; 
 double gamma_Ni=0.052484417;  
 double D_l=1.0e-9;
 double D_s=0.0;
 double N_A=6.022e23;
 double a_0=pow(V_m/N_A,1.0/3.0); //=2.22*10^(-10)
-double kszi=5.2e-8*d0_coeff;
+double kszi=4.0e-8;
 /*------------Konstansok--------------------------*/
 
 double R=8.3144087;
@@ -80,7 +80,7 @@ double dless_HT=4.0*gamma_Ni*kszi/(eps_2*T);
 double dless_M_theta_s=7.2e-4;
 double dless_M_theta_l=720.0;
   //Plapp-modell parameterei:
-double dless_HT_Plapp=H_coeff*gamma_Ni*d0/(eps_2*T_m_Ni);
+double dless_HT_Plapp=H_coeff*8.0*gamma_Ni*d0/(eps_2*T_m_Ni);
 double dless_M_theta_l_Plapp=dless_M_theta_l*4.0*d0/kszi;
 double dless_M_theta_s_Plapp=dless_M_theta_l_Plapp*1.0e-4;
 
